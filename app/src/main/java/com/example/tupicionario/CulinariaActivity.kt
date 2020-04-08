@@ -8,5 +8,9 @@ class CulinariaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_culinaria)
+
+        val arrayCulinaria = resources.getStringArray(R.array.culinaria)
+        val listCulinaria = arrayListOf(*arrayCulinaria)
+
     }
 }

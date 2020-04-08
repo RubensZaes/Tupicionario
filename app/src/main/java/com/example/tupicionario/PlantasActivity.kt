@@ -8,5 +8,8 @@ class PlantasActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_plantas)
+
+        val arrayPlantas = resources.getStringArray(R.array.plantas)
+        val listPlantas = arrayListOf(*arrayPlantas)
     }
 }
