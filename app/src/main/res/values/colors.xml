@@ -3,4 +3,17 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <!-- Categoria Bichos -->
+    <color name="bichos_categoria">#2196F3</color>
+
+    <!-- Categoria Culinaria -->
+    <color name="culinaria_categoria">#f44336</color>
+
+    <!-- Categoria Plantas -->
+    <color name="plantas_categoria">#4CAF50</color>
+
+    <!-- Categoria Povos Nativos -->
+    <color name="povos_nativos_categoria">#FF9800</color>
+
 </resources>
