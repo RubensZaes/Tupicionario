@@ -6,4 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".PlantasActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Plantas" />
+
 </LinearLayout>
