@@ -2,9 +2,9 @@ package com.example.tupicionario
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_bichos.*
 
 class BichosActivity : AppCompatActivity() {
 
@@ -18,12 +18,7 @@ class BichosActivity : AppCompatActivity() {
         val arrayBichos = resources.getStringArray(R.array.bichos)
         val listBichos = listOf(*arrayBichos)
 
-        val root: LinearLayout = findViewById(R.id.rootBichos)
+        rootBichos.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listBichos)
 
-        for (bicho in listBichos) {
-            textView = TextView(this)
-            textView.setText(bicho)
-            root.addView(textView)
-        }
     }
 }

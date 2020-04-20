@@ -2,8 +2,11 @@ package com.example.tupicionario
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.LinearLayout
+import android.widget.ListView
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_culinaria.*
 
 class CulinariaActivity : AppCompatActivity() {
 
@@ -16,13 +19,7 @@ class CulinariaActivity : AppCompatActivity() {
         val arrayCulinaria = resources.getStringArray(R.array.culinaria)
         val listCulinaria = arrayListOf(*arrayCulinaria)
 
-        val root: LinearLayout = findViewById(R.id.rootCulinaria)
-
-        for (culinaria in listCulinaria) {
-            textView = TextView(this)
-            textView.setText(culinaria)
-            root.addView(textView)
-        }
+        rootCulinaria.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listCulinaria)
 
     }
 }

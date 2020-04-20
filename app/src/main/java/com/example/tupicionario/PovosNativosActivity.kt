@@ -2,8 +2,11 @@ package com.example.tupicionario
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.LinearLayout
+import android.widget.ListView
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_povos_nativos.*
 
 class PovosNativosActivity : AppCompatActivity() {
 
@@ -16,12 +19,6 @@ class PovosNativosActivity : AppCompatActivity() {
         val arrayPovosNativos = resources.getStringArray(R.array.povos_nativos)
         val listPovosNativos = arrayListOf(*arrayPovosNativos)
 
-        val root: LinearLayout = findViewById(R.id.rootPovosNativos)
-
-        for (povoNativo in listPovosNativos) {
-            textView = TextView(this)
-            textView.setText(povoNativo)
-            root.addView(textView)
-        }
+        rootPovosNativos.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listPovosNativos)
     }
 }

@@ -2,8 +2,11 @@ package com.example.tupicionario
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.LinearLayout
+import android.widget.ListView
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_plantas.*
 
 class PlantasActivity : AppCompatActivity() {
 
@@ -16,12 +19,6 @@ class PlantasActivity : AppCompatActivity() {
         val arrayPlantas = resources.getStringArray(R.array.plantas)
         val listPlantas = arrayListOf(*arrayPlantas)
 
-        val root: LinearLayout = findViewById(R.id.rootPlantas)
-
-        for (planta in listPlantas) {
-            textView = TextView(this)
-            textView.setText(planta)
-            root.addView(textView)
-        }
+        rootPlantas.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listPlantas)
     }
 }
