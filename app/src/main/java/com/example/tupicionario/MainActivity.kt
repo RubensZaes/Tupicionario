@@ -39,6 +39,4 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, PovosNativosActivity::class.java)
         startActivity(intent)
     }
-
-    data class Item (val titulo: String, val descricao: String, val imagem: Int)
 }
