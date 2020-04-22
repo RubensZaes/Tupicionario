@@ -5,29 +5,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var bichosTextView: TextView
-    private lateinit var culinariaTextView: TextView
-    private lateinit var plantasTextView: TextView
-    private lateinit var povosNativosTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        bichosTextView = findViewById(R.id.bichosTextView)
-        bichosTextView.setOnClickListener(View.OnClickListener { callActivityBichos() })
-
-        culinariaTextView = findViewById(R.id.culinariaTextView)
-        culinariaTextView.setOnClickListener(View.OnClickListener { callactivityCulinaria() })
-
-        plantasTextView = findViewById(R.id.plantasTextView)
-        plantasTextView.setOnClickListener(View.OnClickListener { callActivityPlantas() })
-
-        povosNativosTextView = findViewById(R.id.povosNativosTextView)
-        povosNativosTextView.setOnClickListener(View.OnClickListener { callActivityPovosNativos() })
+        bichosTextView.setOnClickListener { callActivityBichos() }
+        culinariaTextView.setOnClickListener { callactivityCulinaria() }
+        plantasTextView.setOnClickListener {callActivityPlantas() }
+        povosNativosTextView.setOnClickListener { callActivityPovosNativos() }
 
     }
 
@@ -50,4 +39,6 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, PovosNativosActivity::class.java)
         startActivity(intent)
     }
+
+    data class Item (val titulo: String, val descricao: String, val imagem: Int)
 }
