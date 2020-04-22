@@ -10,8 +10,6 @@ import kotlinx.android.synthetic.main.activity_culinaria.*
 
 class CulinariaActivity : AppCompatActivity() {
 
-    lateinit var textView: TextView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_culinaria)

@@ -8,8 +8,6 @@ import kotlinx.android.synthetic.main.activity_bichos.*
 
 class BichosActivity : AppCompatActivity() {
 
-    lateinit var textView: TextView
-
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
