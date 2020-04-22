@@ -2,8 +2,8 @@ package com.example.tupicionario
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_bichos.*
 
 class BichosActivity : AppCompatActivity() {
@@ -16,7 +16,8 @@ class BichosActivity : AppCompatActivity() {
         val arrayBichos = resources.getStringArray(R.array.bichos)
         val listBichos = listOf(*arrayBichos)
 
-        rootBichos.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listBichos)
+        bichosRecycleView.adapter = ItemAdapter(itemList)
+        bichosRecycleView.layoutManager = LinearLayoutManager(this)
 
     }
 }
