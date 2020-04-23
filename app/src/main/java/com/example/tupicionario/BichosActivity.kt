@@ -1,8 +1,10 @@
 package com.example.tupicionario
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_bichos.*
 
@@ -27,8 +29,10 @@ class BichosActivity : AppCompatActivity() {
 
         val listaDeItens = arrayListOf<Item>()
 
+        val color = resources.getColor(R.color.bichos_categoria)
+
         for (i in 0 until tamanhoLista) {
-            var item = Item(R.drawable.ic_bichos, name[i], description[i])
+            var item = Item(R.drawable.ic_bichos, name[i], description[i], color)
             listaDeItens += item
         }
         return listaDeItens

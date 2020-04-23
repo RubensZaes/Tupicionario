@@ -20,6 +20,7 @@
             android:src="@mipmap/ic_launcher"/>
 
         <LinearLayout
+            android:id="@+id/layoutTextosLinearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"

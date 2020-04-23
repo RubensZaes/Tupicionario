@@ -25,8 +25,10 @@ class PlantasActivity : AppCompatActivity() {
 
         val listaDeItens = arrayListOf<Item>()
 
+        val color = resources.getColor(R.color.plantas_categoria)
+
         for (i in 0 until tamanhoLista) {
-            var item = Item(R.drawable.ic_plantas, name[i], description[i])
+            var item = Item(R.drawable.ic_plantas, name[i], description[i], color)
             listaDeItens += item
         }
         return listaDeItens

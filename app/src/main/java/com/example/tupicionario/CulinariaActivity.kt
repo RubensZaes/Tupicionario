@@ -25,8 +25,10 @@ class CulinariaActivity : AppCompatActivity() {
 
         val listaDeItens = arrayListOf<Item>()
 
+        val color = resources.getColor(R.color.culinaria_categoria)
+
         for (i in 0 until tamanhoLista) {
-            var item = Item(R.drawable.ic_culinaria, name[i], description[i])
+            var item = Item(R.drawable.ic_culinaria, name[i], description[i], color)
             listaDeItens += item
         }
         return listaDeItens
