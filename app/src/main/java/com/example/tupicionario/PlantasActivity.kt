@@ -2,10 +2,7 @@ package com.example.tupicionario
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.LinearLayout
-import android.widget.ListView
-import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_plantas.*
 
 class PlantasActivity : AppCompatActivity() {
@@ -15,8 +12,23 @@ class PlantasActivity : AppCompatActivity() {
         setContentView(R.layout.activity_plantas)
 
         val arrayPlantas = resources.getStringArray(R.array.plantas)
-        val listPlantas = arrayListOf(*arrayPlantas)
+        val arrayDescricao = resources.getStringArray(R.array.plantas_desc)
+        val tamanhoLista = arrayPlantas.size
 
-        rootPlantas.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listPlantas)
+        val listaCONVERTIDA = listaConvertida(tamanhoLista, arrayPlantas, arrayDescricao)
+
+        plantasRecycleView.adapter = ItemAdapter(listaCONVERTIDA)
+        plantasRecycleView.layoutManager = LinearLayoutManager(this)
+    }
+
+    fun listaConvertida(tamanhoLista: Int, name: Array<String>, description: Array<String>): List<Item> {
+
+        val listaDeItens = arrayListOf<Item>()
+
+        for (i in 0 until tamanhoLista) {
+            var item = Item(R.drawable.ic_plantas, name[i], description[i])
+            listaDeItens += item
+        }
+        return listaDeItens
     }
 }
