@@ -1,3 +1,3 @@
 package com.example.tupicionario
 
-data class Item (val imageResource: Int, val title: String, val description: String)
+data class Item (val imageResource: Int, var title: String, var description: String)
