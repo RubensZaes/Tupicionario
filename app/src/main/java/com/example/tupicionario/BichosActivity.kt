@@ -14,10 +14,23 @@ class BichosActivity : AppCompatActivity() {
         setContentView(R.layout.activity_bichos)
 
         val arrayBichos = resources.getStringArray(R.array.bichos)
-        val listBichos = listOf(*arrayBichos)
+        val arrayDescricao = resources.getStringArray(R.array.bichos_desc)
+        val tamanhoLista = arrayBichos.size
 
-        bichosRecycleView.adapter = ItemAdapter(itemList)
+        val listaCONVERTIDA = listaConvertida(tamanhoLista, arrayBichos, arrayDescricao)
+
+        bichosRecycleView.adapter = ItemAdapter(listaCONVERTIDA)
         bichosRecycleView.layoutManager = LinearLayoutManager(this)
+    }
 
+    fun listaConvertida(tamanhoLista: Int, name: Array<String>, description: Array<String>): List<Item> {
+
+        val listaDeItens = arrayListOf<Item>()
+
+        for (i in 0 until tamanhoLista) {
+            var item = Item(R.drawable.ic_bichos, name[i], description[i])
+            listaDeItens += item
+        }
+        return listaDeItens
     }
 }
