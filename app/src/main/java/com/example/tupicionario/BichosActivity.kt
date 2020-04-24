@@ -1,14 +1,13 @@
 package com.example.tupicionario
 
 import android.annotation.SuppressLint
-import android.graphics.Color
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_bichos.*
 
-class BichosActivity : AppCompatActivity() {
+class BichosActivity : AppCompatActivity(), OnItemClickListener {
 
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,8 +20,11 @@ class BichosActivity : AppCompatActivity() {
 
         val listaCONVERTIDA = listaConvertida(tamanhoLista, arrayBichos, arrayDescricao)
 
-        bichosRecycleView.adapter = ItemAdapter(listaCONVERTIDA)
+        bichosRecycleView.adapter = ItemAdapter(listaCONVERTIDA, this)
         bichosRecycleView.layoutManager = LinearLayoutManager(this)
+
+
+
     }
 
     fun listaConvertida(tamanhoLista: Int, name: Array<String>, description: Array<String>): List<Item> {
@@ -36,5 +38,9 @@ class BichosActivity : AppCompatActivity() {
             listaDeItens += item
         }
         return listaDeItens
+    }
+
+    override fun onItemClick(itemList: Item, position: Int) {
+        Toast.makeText(this, itemList.description, Toast.LENGTH_SHORT).show()
     }
 }

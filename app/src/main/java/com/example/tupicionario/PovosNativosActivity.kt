@@ -2,10 +2,11 @@ package com.example.tupicionario
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_povos_nativos.*
 
-class PovosNativosActivity : AppCompatActivity() {
+class PovosNativosActivity : AppCompatActivity(), OnItemClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,7 +18,7 @@ class PovosNativosActivity : AppCompatActivity() {
 
         val listaCONVERTIDA = listaConvertida(tamanhoLista, arrayPovosNativos, arrayDescricao)
 
-        povosNativosRecycleView.adapter = ItemAdapter(listaCONVERTIDA)
+        povosNativosRecycleView.adapter = ItemAdapter(listaCONVERTIDA, this)
         povosNativosRecycleView.layoutManager = LinearLayoutManager(this)
     }
 
@@ -32,5 +33,9 @@ class PovosNativosActivity : AppCompatActivity() {
             listaDeItens += item
         }
         return listaDeItens
+    }
+
+    override fun onItemClick(itemList: Item, position: Int) {
+        Toast.makeText(this, itemList.description, Toast.LENGTH_SHORT).show()
     }
 }
