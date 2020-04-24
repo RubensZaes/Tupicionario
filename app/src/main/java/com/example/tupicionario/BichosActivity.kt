@@ -41,6 +41,6 @@ class BichosActivity : AppCompatActivity(), OnItemClickListener {
     }
 
     override fun onItemClick(itemList: Item, position: Int) {
-        Toast.makeText(this, itemList.description, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, itemList.description, Toast.LENGTH_LONG).show()
     }
 }

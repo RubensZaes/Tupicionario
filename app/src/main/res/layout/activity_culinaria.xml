@@ -6,13 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CulinariaActivity"
+    android:padding="12dp"
     android:id="@+id/rootCulinaria">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/culinariaRecycleView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="4dp"
         android:clipToPadding="false"
         tools:listitem="@layout/list_item" />
 

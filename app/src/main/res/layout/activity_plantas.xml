@@ -6,13 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PlantasActivity"
+    android:padding="12dp"
     android:id="@+id/rootPlantas">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/plantasRecycleView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="4dp"
         android:clipToPadding="false"
         tools:listitem="@layout/list_item"/>
 </LinearLayout>
